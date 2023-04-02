@@ -873,13 +873,8 @@ ul.easy li a:hover {
      width: 80%;
 }
 
-.videosec{
-     align-items: center !important;
-    display:flex;
-    grid-template-columns:repeat(2, 1fr);
-    gap:10rem;
-    
-}
+
+
 
 
 /** end work section **/
@@ -1127,5 +1122,18 @@ ul.social_icon li a i:hover {
 }
 
 
-/** end footer **/
+.videosec video{
+     align-items: center !important;
+     display:flex;
+     grid-template-columns:repeat(2, 1fr);
+     gap:10rem;
+     
+ }
 
+/** end footer **/
+@media screen and (max-width:600px){
+     #video{
+          width: 500px;
+          align-items: center;
+     }
+}
