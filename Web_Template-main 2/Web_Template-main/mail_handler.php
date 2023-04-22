@@ -11,31 +11,30 @@ require 'phpmailer/src/SMTP.php';
 $mail = new PHPMailer(true);
 
 try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    //Server settings                
+     //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = '1mbeesolution@gmail.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'mail.1mbee.lk';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = '1mbeesolution@gmail.com';                     //SMTP username
-    $mail->Password   = 'fjtazblmxsoonnvl';                               //SMTP password
+    $mail->Username   = '1mbeewebmail@1mbee.lk';                     //SMTP username
+    $mail->Password   = '2023shakthi';                               //SMTP password
     $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                   
+    $mail->Port       = 465;                                   
 
     //Recipients
     $mail->setFrom = $_POST["Email"];
-    $mail->addAddress('1mbeesolution@gmail.com', '1MBEE Solution');     //Add a recipient
+    $mail->addAddress('1mbeewebmail@1mbee.lk', '1MBEE Softwere');     //Add a recipient
 
-    $mail->addReplyTo('1mbeesolution@gmail.com', 'Information');
+    $mail->addReplyTo('1mbeewebmail@1mbee.lk', 'Information');
 
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = '';
+    $mail->Subject = $_POST["Full_Name"];
     $mail->Body    = $_POST["message"];
+    $mail -> Body = $_POST["Phone_Number"];
+    $mail -> Body = $_POST["Email"];
 
-
-    $mail->send();
-    echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

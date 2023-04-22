@@ -1133,7 +1133,7 @@ ul.social_icon li a i:hover {
 /** end footer **/
 @media screen and (max-width:600px){
      #video{
-          width: 500px;
+          width: 300px;
           align-items: center;
      }
 }
